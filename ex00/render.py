@@ -17,14 +17,14 @@ def template_name():
 def render_function():
     # ERROR MANAGEMENT STILL TO DO (but how to make it work?)
     file = open(template_name(), 'r')
+    file_name = ''.join(template_name().split('.')[:-1]) + '.html'
     html_text = file.read()
-    html_output = open('myCV.html', 'w')
+    html_output = open(file_name, 'w')
 
     for variable in globals().keys():
         # globals().keys() gives us the full list of variables, including those in the settings.py
         # document.
         # We therefore try to match those variables with the variables in the template.
-        print(variable)
         if "{" + variable + "}" in html_text:
 
             html_text = re.sub("{" + variable + "}", str(globals()[variable]), html_text)

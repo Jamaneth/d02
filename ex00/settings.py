@@ -1,3 +1,4 @@
+name = "duoquadragintian"
 name = "Virepinte"
 firstname = "Grégoire"
 title = "CV de Grégoire Virepinte"
